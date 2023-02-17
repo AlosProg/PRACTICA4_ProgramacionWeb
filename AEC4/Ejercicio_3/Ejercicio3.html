@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        MailMaster=new Object ();
+        MailMaster.eMess=function (){
+            alert ("Hmmmm... Parece ese tipo. la entrada de correo electrónico tiene algo mal. Por favor, mírelo y vea si puede arreglarlo.")
+        }
+    </script>
+    <style type="text/css">
+    /*DDDCC5,958976,611427,1D2326,6A6A61 */
+    body{
+        background-color:#e4dd1f;
+        color:#0a8dce;
+        font-family: Verdana, Geneva, sans-serif;
+    }
+
+    h1,h2{
+        background-color:#2c271f;
+        color :#DDDCC5;
+        text-align:center;
+        font-family: "Arial Black", Verdana, Arial;
+    }
+
+    h3{
+        color:#d61041;
+    }
+
+    fieldset{
+        color:#707038;
+    }
+    </style>
+    <title>E-mail simple</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>REMITENTE</h1>
+        </header>
+        <section>
+            <header>
+                <h3>Complete el formulario y envíenos sus preguntas, ideas y diatribas.</h3>
+            </header>
+             <form action="mailer1.php" method="post">
+                <input name=userName>
+                &nbsp;Por favor introduzca su nombre.<br>
+                <input name=mailNow type=email oninvalid="MailMaster.eMess () ">
+                &nbsp; Ingrese la dirección de correo electrónico para enviar la respuesta.<br>
+                <input name=subject>&nbsp; ¿Qué tema te gustaría abordar?<br>
+            </div>
+            <section>
+            <aside>
+                <h2>Más información sobre el usuario</h2>
+                <fieldset>
+                    <legend>Elija una opción: </legend>
+                    <label>
+                        <input type=radio name=usuario value="Desempleado">
+                        Desempleado
+                    </label><br>
+                    <label>
+                        <input type=radio name=usuario value="Autónomo">
+                        Trabajador por cuenta propia (Autónomo)
+                    </label><br>
+                    <label>
+                        <input type=radio name=usuario value="Empleado">
+                        Trabajador por cuenta ajena (Empleado)
+                    </label><br>
+                    <label>
+                        <input type=radio name=usuario value="Jubilado">
+                        Jubilado
+                    </label><br>
+                </fieldset>
+            </aside>
+            <h2>Tipo de servicio requerido</h2>
+            <fieldset>
+                
+                <legend>Elija las opciones que desee: </legend>
+                <label>
+                    <input type=checkbox name=telefono value="telefono" >
+                    Servicio telefónico
+                </label><br>
+
+                <label>
+                    <input type=checkbox name=presencial value="presencial" >
+                    Servicio presencial
+                </label><br>
+
+                <label>
+                    <input type=checkbox name=digital value="digital" >
+                    Servicio digital
+                </label><br>
+                <label>  
+                    <input type=checkbox name=otros value="otros" >
+                    Otros servicios
+                </label><br>
+                </fieldset>
+            </section>
+        </div>
+                <fieldset>
+                    <legend>Comentario</legend>
+                    <textarea name=talk cols=70 rows=15 ></textarea>
+                 </fieldset>
+                 <input type=submit name=sender value="Enviar email">
+            </form>
+        </section>
+    </article>
+</body>
+</html>

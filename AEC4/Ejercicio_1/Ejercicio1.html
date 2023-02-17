@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA ONLINE</title>
+    <style type="text/css">
+    body {
+        background-color:#d6be36;
+        font-family:arial,helvet;
+        font-size:14px;
+        margin-left:20px;
+    }
+    
+    h1{
+        font-family:"Arial Black", Gadget, sans-serif;
+        color:#2c1973;
+        font-size:30px;
+    }
+    
+    h2 {
+        color: #dd1710;
+    }
+    
+    #dataEntry {
+        display:table;
+    }
+        
+    #lang {
+        display:table-cell;
+        width:400px;
+    }
+         
+    #salida{
+        display:table-cell;
+        width: 300px;
+    }
+        
+    aside {
+        display:table-cell;
+        width:250px;
+        padding-bottom: 30px;
+    }
+    </style>
+    <script type="text/javascript">
+        FormMaster=new Object ();
+        FormMaster.resolveForm=function (){
+            this.countVal="";
+            this.topCount=document.chequeo.length-2; // esta variable será igual a los objetos del formulario quitando la textarea y el boton
+            for (var count=0; count < this.topCount;count++)  //recorremos los objetos del formulario
+                if (document.chequeo.elements[count].checked){ //en el DOM si uno de los bojetos de chequeo es chequeado...
+                    this.countVal+=document.chequeo.elements[count] .value+"\n"; //lo metemos en la variable con su valor
+                }
+                document.chequeo.salida.value=this.countVal; //recurrimos al DOM para decirle que en el textare introduzcamos los valores chequeados
+            }
+     </script>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>TIENDA ONLINE DE ROPA DE DEPORTES</h1>   
+        </header>
+        <div id="dataEntry">
+        <div id="lang">
+        <section>
+        <h2>ROPA DEPORTIVA</h2>
+            <form name=chequeo> 
+                    <fieldset>
+                    <legend>Elija su ropa: </legend>
+                    <label>
+                        <input type=checkbox name=chándal value="Chándal" >
+                        CHANDAL
+                    </label><br>
+
+                    <label>
+                        <input type=checkbox name=camiseta value="Camiseta" >
+                        CAMISETA
+                    </label><br>
+
+                    <label>
+                        <input type=checkbox name=sudadera value="Sudadera" >
+                        SUDADERA
+                    </label><br>
+
+                    <label>  
+                        <input type=checkbox name=pantaloncorto value="Pantalón corto" >
+                        PANTALON CORTO
+                    </label><br>
+
+                    <label>
+                        <input type=checkbox name=pantalonlargo value="Pantalón largo" >
+                        PANTALON LARGO
+                    </label><br>
+                    </fieldset>
+                </section>
+            </div>
+                <section>
+                <aside>
+                    <h2>DEPORTE</h2>
+                    <fieldset>
+                        <legend>Elija del deporte: </legend>
+                        <label>
+                            <input type=radio name=deporte value="FUTBOL">
+                            Fútbol
+                        </label><br>
+                        <label>
+                            <input type=radio name=deporte value="BALONCESTO">
+                            Baloncesto 
+                        </label><br>
+                        <label>
+                            <input type=radio name=deporte value="TENIS">
+                            Tenis 
+                        </label><br>
+                        <label>
+                            <input type=radio name=deporte value="CICLISMO">
+                            CIclismo 
+                        </label><br>
+                        <label>
+                            <input type=radio name=deporte value="BOXEO">
+                            Boxeo
+                        </label><br>
+                    </fieldset>
+                </aside>
+                </section>
+            </div>
+                <section>
+                    <div id="salida">
+                       <fieldset> 
+                            <legend>Resumen Pedido</legend>
+                            <textarea name=salida cols="40" rows="10"></textarea>
+                        </fieldset>  
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <p>
+                            <input type=button name=obtenerlo value="Ver resumen"
+                            onClick="FormMaster.resolveForm()">
+                        </p>
+                    </div>
+                </section>            
+            </form>
+        </div>
+</body>
+</html>
